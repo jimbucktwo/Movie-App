@@ -1,0 +1,43 @@
+.sign-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    height: 60vh;
+}
+
+.sign-up-form {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.sign-up-form div {
+    padding: 20px;
+}
+
+.email-form, .password-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.email-form label, .password-form label {
+    color: #646cff;
+    font-weight: bold;
+}
+
+.sign-up-form button {
+    padding: 10px;
+}
+
+.email-form input, .password-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+h1 {
+    padding: 10px;
+}
