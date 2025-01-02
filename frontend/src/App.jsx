@@ -6,9 +6,11 @@ import NavBar from './components/NavBar';
 import {MovieProvider} from './contexts/MovieContext';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import {UserProvider} from './contexts/UserContext';
 
 function App() {
   return (
+    <UserProvider>
     <MovieProvider>
     <div>
       <NavBar />
@@ -19,10 +21,12 @@ function App() {
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/signout" element={<SignIn />} />
       </Routes>
     </main>
     </div>
     </MovieProvider>
+    </UserProvider>
   )
 }
 

@@ -1,6 +1,7 @@
 import "../css/SignIn.css";
 import { Link, useNavigate} from "react-router-dom";
 import { useState, useEffect} from "react";   
+import { useUserContext } from "../contexts/UserContext";
 
 const API_BASE = "http://localhost:5000/user";
 
@@ -9,6 +10,7 @@ function SignIn() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+    const {signIn, signed} = useUserContext();
 
     const GetUsers = () => {
         fetch(API_BASE)
@@ -48,7 +50,7 @@ function SignIn() {
                     <label htmlFor="password">Password: </label>
                     <input type="password" id="password" name="password" value={password} onChange={(e) => {setPassword(e.target.value)}} placeholder="Enter Password..."/>
                 </div>
-                <button type="submit">Sign In</button>
+                <button type="submit" onClick={() => (signIn())}>Sign In</button>
                 
             </form>
             <Link to="/signup" className="sign-up-link">Don't have an account? Sign Up</Link>
